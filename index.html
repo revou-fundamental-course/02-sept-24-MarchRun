@@ -4,96 +4,240 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RevoU-Mini-Project-MarchelKarunaKwee</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js\script.js"></script>
   </head>
 
   <body>
 
     <header class="main-header">
-      <h1>Welcome to Katik</h1>
-      <p>Hai Sobat Selamat Datang di Katik :)</p>
+      <div class="header-text">
+        <h1>Welcome to Katik</h1>
+        <p>Hai sobat koding!</p>
+        <p>Ini adalah sebuah website kalkulator sederhana untuk melakukan perhitungan luas dan keliling segitiga dan jajar genjang</p>
+      </div>
     </header>
 
     <main>
       <section class="selection-content">
-        <button href="#" type="button" class="selection-btn">Segitiga</button>
-        <button href="#" type="button" class="selection-btn">Jajar Genjang</button>
+        <button type="button" class="selection-button" id="segitiga_btn">Segitiga</button>
+        <button type="button" class="selection-button" id="jajargenjang_btn">Jajar Genjang</button>
       </section>
 
-      <section class="main-content">
+      <section class="main-content" id="segitiga_sct">
         <aside>
           <header>
-            <h1 class="segitiga-header">Luas Segitiga</h1>
-          </header> 
+            <div class="segitiga-header">
+              <h1 class="st-1 st-header">Luas Segitiga</h1>
+            </div>
+          </header>
   
           <article class="segitiga-content">
             <div class="segitiga-img"></div>
-            <p>Rumus Luas Segitiga</p>
+            <p>Rumus Luas Segitiga:</p>
+            <p class="st-1"><b>L = 1/2 * a * t</b></p>
+
+            <div class="st-2">
+              <p>Dimana :</p>
+              <p>L = Luas</p>
+              <p>a = Panjang Alas</p>
+              <p>t = Tinggi</p>
+            </div>
           </article>
-  
+
           <hr>
-  
+
           <form>
-            <header>
-              <h1 class="segitiga-form-header">Hitung Luas Segitiga</h1>
+            <header class="segitiga-header">
+              <h1>Hitung Luas Segitiga</h1>
             </header>
-  
+
             <div class="input-wrapper">
               <label for="panjang-alas">Panjang alas:</label>
-              <input id="panjang-alas" type="number">
+              <input id="panjang-alas" type="number" placeholder="Isi Panjang Alas nya!">
+            </div>
+  
+            <div class="input-wrapper st-8">
+              <label for="tinggi">Tinggi:</label>
+              <input id="tinggi" type="number" placeholder="Isi Tinggi nya!">
+            </div>
+
+            <p id="result">Hasil perhitungan: </p>
+
+            <button type="button" class="hitung-button" onclick="hitung_luas_segitiga()">Hitung</button>
+          </form>
+
+          <div class="output-content" id="st-4">
+            <p class="st-5" id="hasil_luas_segitiga"></p>
+            <div class="st-6">
+              <button type="button" class="st-7" onclick="reset_luas_segitiga()">Reset</button>
+            </div>
+          </div>
+        </aside>
+
+        <aside class="line-aside">
+          <header>
+            <div class="segitiga-header">
+              <h1 class="st-1 st-header">Keliling Segitiga</h1>
+            </div>
+          </header>
+  
+          <article class="segitiga-content">
+            <div class="segitiga-img"></div>
+            <p>Rumus Keliling Segitiga:</p>
+            <p class="st-1"><b>K = S1 + S2 + S3</b></p>
+
+            <div class="st-2">
+              <p>Dimana :</p>
+              <p>K = Keliling</p>
+              <p>S1 = Sisi A</p>
+              <p>S2 = Sisi B</p>
+              <p>S3 = Sisi C</p>
+            </div>
+          </article>
+
+          <hr>
+
+          <form>
+            <header class="segitiga-header">
+              <h1>Hitung Keliling Segitiga</h1>
+            </header>
+
+            <div class="input-wrapper">
+              <label for="sisi-a">Sisi A:</label>
+              <input id="sisi-a" type="number" placeholder="Isi Sisi A nya!">
+            </div>
+  
+            <div class="input-wrapper st-8">
+              <label for="sisi-b">Sisi B:</label>
+              <input id="sisi-b" type="number" placeholder="Isi Sisi B nya!">
+            </div>
+
+            <div class="input-wrapper st-8">
+              <label for="sisi-c">Sisi C:</label>
+              <input id="sisi-c" type="number" placeholder="Isi Sisi C nya!">
+            </div>
+
+            <p id="result">Hasil perhitungan: </p>
+
+            <button type="button" class="hitung-button" onclick="hitung_keliling_segitiga">Hitung</button>
+          </form>
+
+          <div class="output-content st-4">
+            <p class= "st-5" id="hasil_keliling_segitiga"></p>
+            <div class="st-6">
+              <button type="button" class="st-7" onclick="reset_keliling_segitiga()">Reset</button>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="main-content" id="jajargenjang_sct">
+        <aside>
+          <header>
+            <div class="jajargenjang-header">
+              <h1 class="st-1 st-header">Luas Jajar Genjang</h1>
+            </div>
+          </header>
+  
+          <article class="jajargenjang-content">
+            <div class="jajargenjang-img"></div>
+            <p>Rumus Luas Jajar Genjang:</p>
+            <p class="st-1"><b>L = a * t</b></p>
+
+            <div class="st-2">
+              <p>Dimana :</p>
+              <p>L = Luas</p>
+              <p>a = Panjang Alas</p>
+              <p>t = Tinggi</p>
+            </div>
+          </article>
+
+          <hr>
+
+          <form>
+            <header id="jajargenjang-header">
+              <h1>Hitung Luas Jajar Genjang</h1>
+            </header>
+
+            <div class="input-wrapper">
+              <label for="panjang-alas">Panjang alas:</label>
+              <input id="panjang-alas" type="number" placeholder="Isi Panjang Alas nya!">
             </div>
   
             <div class="input-wrapper">
               <label for="tinggi">Tinggi:</label>
-              <input id="tinggi" type="number">
-            </div>
-  
-            <p id="result">Hasil Perhitungan:</p>
-  
-            <button class="hitung-btn">Hitung</button>
-          </form>
-        </aside>
-  
-        <aside>
-          <header>
-            <h1 class="segitiga-header">Keliling Segitiga</h1>
-          </header> 
-  
-          <article class="segitiga-content">
-            <div class="segitiga-img"></div>
-            <p>Rumus Keliling Segitiga</p>
-          </article>
-  
-          <hr>
-  
-          <form>
-            <header>
-              <h1 class="segitiga-form-header">Hitung Keliling Segitiga</h1>
-            </header>
-  
-            <div class="input-wrapper">
-              <label for="sisi a">Sisi a:</label>
-              <input id="sisi a" type="number">
-            </div>
-  
-            <div class="input-wrapper">
-              <label for="sisi b">Sisi b:</label>
-              <input id="sisi b" type="number">
+              <input id="tinggi" type="number" placeholder="Isi Tinggi nya!">
             </div>
 
+            <p id="result">Hasil perhitungan: </p>
+
+            <button type="button" class="hitung-button" onclick="hitung_luas_jajargenjang()">Hitung</button>
+          </form>
+
+          <div class="output-content st-4">
+            <p class="st-5" id="hasil_luas_jajargenjang"></p>
+            <div class="st-6">
+              <button type="button" class="st-7" onclick="reset_luas_jajargenjang()">Reset</button>
+            </div>
+          </div>
+        </aside>
+
+        <aside class="line-aside">
+          <header>
+            <div class="jajargenjang-header">
+              <h1 class="st-1 st-header">Keliling Jajar Genjang</h1>
+            </div>
+          </header>
+  
+          <article class="jajargenjang-content">
+            <div class="jajargenjang-img"></div>
+            <p>Rumus Keliling Jajar Genjang:</p>
+            <p class="st-1"><b>K = 2 * S1 * S2</b></p>
+
+            <div class="st-2">
+              <p>Dimana :</p>
+              <p>K = Keliling</p>
+              <p>S1 = Sisi A</p>
+              <p>S2 = Sisi B</p>
+            </div>
+          </article>
+
+          <hr>
+
+          <form>
+            <header class="st-1">
+              <h1>Hitung Keliling Jajar Genjang</h1>
+            </header>
+
             <div class="input-wrapper">
-              <label for="sisi c">Sisi c:</label>
-              <input id="sisi c" type="number">
+              <label for="sisi-a">Sisi A:</label>
+              <input id="sisi-a" type="number" placeholder="Isi Sisi A nya!">
             </div>
   
-            <p id="result">Hasil Perhitungan:</p>
-  
-            <button class="hitung-btn">Hitung</button>
+            <div class="input-wrapper">
+              <label for="sisi-b">Sisi B:</label>
+              <input id="sisi-b" type="number" placeholder="Isi Sisi B nya!">
+            </div>
+
+            <p id="result">Hasil perhitungan: </p>
+
+            <button type="button" class="hitung-button" onclick="hitung_keliling_jajargenjang">Hitung</button>
           </form>
+
+          <div class="output-content st-4">
+            <p class="st-5" id="hasil_keliling_jajargenjang"></p>
+            <div class="st-6">
+              <button type="button" class="st-7" onclick="reset_keliling_jajargenjang()">Reset</button>
+            </div>
+          </div>
         </aside>
       </section>
 
+      <section class="back-up-content" id="back_up_sct">
+        <button type="button" class="st-9 st-8" id="back_up_btn" onclick="back_up"></button>
+      </section>
     </main>
   </body>
 </html>
